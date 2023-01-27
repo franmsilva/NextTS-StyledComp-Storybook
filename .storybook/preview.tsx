@@ -3,6 +3,7 @@ import React from 'react';
 import { ThemeProvider } from 'styled-components';
 
 import { GlobalStyles } from '../src/styles/globals';
+import { breakpoints } from '../src/styles/mediaQueries';
 import { Theme } from '../src/styles/theme';
 
 const OriginalNextImage = NextImage.default;
@@ -16,56 +17,50 @@ const customViewports = {
   mobileSmall: {
     name: 'Mobile Small',
     styles: {
-      width: '320px',
-      height: '848px',
+      width: breakpoints.mobileS,
+      height: '568px',
     },
   },
   mobileMedium: {
     name: 'Mobile Medium',
     styles: {
-      width: '375px',
-      height: '848px',
+      width: breakpoints.mobileM,
+      height: '667px',
     },
   },
   mobileLarge: {
     name: 'Mobile Large',
     styles: {
-      width: '425px',
-      height: '848px',
+      width: breakpoints.mobileL,
+      height: '926px',
     },
   },
   tablet: {
     name: 'Tablet',
     styles: {
-      width: '768px',
-      height: '848px',
+      width: breakpoints.tablet,
+      height: '1024px',
     },
   },
   laptop: {
     name: 'Laptop',
     styles: {
-      width: '1024',
-      height: '848px',
+      width: breakpoints.laptop,
+      height: '1366px',
     },
   },
 };
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
-  viewport: {
-    defaultViewport: 'mobileMedium',
-    viewports: customViewports,
-  },
-  layout: 'fullscreen',
-  backgrounds: {
-    default: 'Black',
-    values: [{ name: 'Black', value: '#000000' }],
-  },
   controls: {
     matchers: {
       color: /(background|color)$/i,
       date: /Date$/,
     },
+  },
+  viewport: {
+    viewports: customViewports,
   },
 };
 
