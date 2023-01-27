@@ -1,5 +1,7 @@
 import { css, DefaultTheme } from 'styled-components';
 
+export const BASE_FONT_SIZE = 12;
+
 export const Theme: DefaultTheme = {
   fontFamily: {
     header: "'Raleway', 'Open Sans', sans-serif",
